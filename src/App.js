@@ -55,7 +55,7 @@ function App() {
       <div className="card">
         <div className="card-header">Stopwatch App</div>
         <div className="pt-0 d-flex flex-column align-items-center">
-          <div className=" fs-1 m-3">{formatTime()}</div>
+          <div className="fs-1 m-3">{formatTime()}</div>
           <div className="btn-group custom-btn-group" role="group">
             <button
               type="button"
