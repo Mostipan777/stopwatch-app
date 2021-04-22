@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="container mt-5" style={{ width: '25rem' }}>
-      <div className="card shadow bg-body rounded">
+      <div className="card">
         <div className="card-header">Stopwatch App</div>
         <div className="pt-0 d-flex flex-column align-items-center">
           <div className=" fs-1 m-3">{formatTime()}</div>
