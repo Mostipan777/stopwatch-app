@@ -59,21 +59,21 @@ function App() {
           <div className="btn-group custom-btn-group" role="group">
             <button
               type="button"
-              className="btn btn-outline-success"
+              className="btn-outline-success"
               onClick={toggleTimer}
             >
               {isCounting ? 'Stop' : 'Start'}
             </button>
             <button
               type="button"
-              className="btn btn-outline-success"
+              className="btn-outline-success"
               id="waitBtn"
             >
               Wait
             </button>
             <button
               type="button"
-              className="btn btn-outline-success"
+              className="btn-outline-success"
               onClick={resetTimer}
             >
               Reset
