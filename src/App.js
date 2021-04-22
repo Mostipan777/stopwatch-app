@@ -51,29 +51,29 @@ function App() {
   };
 
   return (
-    <div className="container mt-5" style={{ width: '25rem' }}>
-      <div className="card">
+    <div className="container mt-5" style={{ width: '20rem' }}>
+      <div className="card shadow bg-body rounded">
         <div className="card-header">Stopwatch App</div>
         <div className="pt-0 d-flex flex-column align-items-center">
           <div className="fs-1 m-3">{formatTime()}</div>
           <div className="btn-group custom-btn-group" role="group">
             <button
               type="button"
-              className="btn-outline-success"
+              className="btn btn-outline-success"
               onClick={toggleTimer}
             >
               {isCounting ? 'Stop' : 'Start'}
             </button>
             <button
               type="button"
-              className="btn-outline-success"
+              className="btn btn-outline-success"
               id="waitBtn"
             >
               Wait
             </button>
             <button
               type="button"
-              className="btn-outline-success"
+              className="btn btn-outline-success"
               onClick={resetTimer}
             >
               Reset
