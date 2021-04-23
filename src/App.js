@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { interval, fromEvent, timer } from 'rxjs';
+import { fromEvent, timer } from 'rxjs';
 import { buffer, filter, debounceTime, map } from 'rxjs/operators';
 
 function App() {
@@ -25,7 +25,6 @@ function App() {
         filter((clickArray) => clickArray >= 2)
       )
       .subscribe(() => setIsCounting(false));
-    return () => interval.unsubscribe();
   }, []);
 
   const toggleTimer = () => {
@@ -38,8 +37,9 @@ function App() {
   };
 
   const resetTimer = () => {
+    setIsCounting(false);
     setTime(0);
-    setIsCounting(true);
+    timer(10).subscribe(() => setIsCounting(true));
   };
 
   const formatTime = () => {
@@ -51,7 +51,7 @@ function App() {
   };
 
   return (
-    <div className="container mt-5" style={{ width: '20rem' }}>
+    <div className="container mt-5" style={{ width: '22rem' }}>
       <div className="card shadow bg-body rounded">
         <div className="card-header">Stopwatch App</div>
         <div className="pt-0 d-flex flex-column align-items-center">
@@ -73,7 +73,9 @@ function App() {
             </button>
             <button
               type="button"
-              className="btn btn-outline-success"
+              className={`btn btn-outline-success ${
+                time === 0 ? 'disabled' : null
+              }`}
               onClick={resetTimer}
             >
               Reset
